@@ -52,7 +52,7 @@ def responder entrada, libro
   	if libro.en_salidas? frase.first
   		puts "libro en salidas"
 	  	resultado = "Elegiste la opción #{frase.first}" 
-	    nueva_sección = libro.nueva_sección(frase.first.to_i - 1)
+	    nueva_sección = libro.nueva_sección(frase.first.to_i )
 	else
 		resultado = "Opción no aparece"
 	end

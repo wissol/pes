@@ -86,43 +86,37 @@ class Libro
 			    	prefieres no pensar mucho en ella.
 			    	Hasta aquí lo malo.
 				</p>
+
+				<h3> 
+					Tu biografía
+				</h3>
 				<p>
 			    	Sí, eres esclavo y todo eso, pero no un
-			    	esclavo cualquiera. Verás has crecido en 
+			    	esclavo cualquiera. Verás, has crecido en 
 			    	palacio desde que te compraron a los tres
-			    	años. 
+			    	años. Y tuviste la fortuna de que la cayeras
+			    	bien a Su Excelencia Dever de Joe, el
+			    	Segundo Ministro del Gabinete Imperial. Él
+			    	te ha protegido, instruído y enseñado lo básico
+			    	de la ciencia médica.
 				</p>
 
-				<h3>Algunas órdenes</h3>
-				
 				<p>
-					El software que he diseñado solo entiende algunos de los
-					verbos del español. Los suficientes para el juego y no 
-					demasiados para que no te líes. Son los siguientes:
+					Tu trabajo se circunscribe a la enfermería de 
+					palacio. Lo que muchas veces significa que te
+					despierten en medio de la noche. ¡Y que no sea 
+					un príncipe borracho!
 				</p>
-				<ol>
-					<li>ayuda: (y) muestra esta lista de verbos</li>
-					<li>narra: (n) da más detalles de la sección.</li>
-					<li>recoge (r) <em>objeto</em>: recoges ese objeto y lo guardas</li>
-					<li>asir   (a) <em>objeto</em>: agarras el objeto con la mano, preparándolo
-					para su uso.</li>
-					<li>ponerme <em>ropa</em>: (p) sirve para ponerte ropa o armadura</li>
-					<li>opción <em>número</em>: (o) elige una de las opciones de la sección.
-				    Una vez elegida, la narración continúa en otra sección, así que no te
-				    olvides de recoger anteslos objetos que desees o realizar otras 
-				    acciones</li>
-				    <li>hablar <em>personaje</em>: (h) sirve para hablar con algún personaje.</li>
-				</ol> 
+				
 				<h3>
 				Opciones
 				</h3>
 				<ol>
-				<li>¿Quieres conocer a tu personaje?</li>
-				<li>¿O prefieres pasar directamente a la aventura?</li>
+				<li>Pasa a la aventura</li>
 				</ol>
 				
 				",
-				[:personaje, :introducción]
+				[:introducción]
 				)
 
 
