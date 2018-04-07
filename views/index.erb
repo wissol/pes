@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title><%= @title %></title>
+		<title><%= @título %></title>
 
 		<link rel="stylesheet" href="normalize.css">
 		<link rel="stylesheet" href="main.css">
@@ -13,13 +13,9 @@
 	<body>
 		<div id="flexbox">
 			<main>
-			<h1><%= @header %></h1> 
+			<h1><%= @cabecera %></h1> 
 
-			<%= @content %>
-		
-			<% if @resultado != "" %>
-				<div class="resultado"><h3>Respuesta del Máster:</h3> <%= @resultado %></div>
-			<% end %>
+			<%= @contenido %>			
 
 			<form method="POST" action="/">
 			  <p>¿Qué haces?: <input type="text" name="orden"></p>
@@ -29,6 +25,9 @@
 			</main>
 
 			<aside>
+				<% if @resultado != "" %>
+					<div class="resultado"><h3>Respuesta del Máster:</h3> <%= @resultado %></div>
+				<% end %>
 				<%= @pj.to_html %>
 			</aside>
 		</div>

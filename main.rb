@@ -46,6 +46,10 @@ máster = Máster.new
 
 # ------------------ Funciones "Main" ----------------------------------------
 
+def no_entiendo
+  	"¡Vaya!, no he podido entender eso"
+end
+
 def responder entrada, libro
 
   # Parámetros
@@ -88,10 +92,10 @@ def muestra(sección, pj=pip, resultado = "")
 	#   2. pj      [Personaje] definido en clases/personaje.rb
 	#   3. resultado [String] contiene la respuesta del máster
 	# Llama a erb :index para mostrar la página web generada
-	
-	@title = "El emperador secreto | #{sección.título}"
-	@header = sección.cabecera
-	@content = sección.contenido
+
+	@título = "El emperador secreto | #{sección.título}"
+	@cabecera = sección.cabecera
+	@contenido = sección.contenido
 	@pj = pj
 	@resultado = resultado
 	erb :index

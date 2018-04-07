@@ -27,9 +27,7 @@ class Máster
 
 	# end
 
-	def no_entiendo
-  		"no entiendo"
-	end
+	
   
 
 	def ronda_combate personaje_1, personaje_2
