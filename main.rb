@@ -43,14 +43,20 @@ end
 end
 
 def responder entrada, libro
-  # [EN] parser function 
+
+  # Parámetros
+  # 	1. entrada [String] contiene las instrucciones del jugador
+  # 	2. libro [Libro] definido en clases/libro.rb
+  # 
+  # Devuelve:
+  # 	1. resultado [String] contiene la respuesta del máster
+  # 	2. nueva_sección [Sección] definido en clases/libro.rb
   frase = entrada.strip.downcase.split.quita_preposiciones.quita_artículos
   frase.map! {|palabra| palabra.quita_acentos }
   nueva_sección = libro.sección_actual
   case frase.first
   when "1".."9"
-  	if libro.en_salidas? frase.first
-  		puts "libro en salidas"
+  	if sección_actual.en_salidas? frase.first
 	  	resultado = "Elegiste la opción #{frase.first}" 
 	    nueva_sección = libro.nueva_sección(frase.first.to_i )
 	else

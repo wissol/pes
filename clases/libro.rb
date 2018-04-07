@@ -8,6 +8,11 @@ class Sección
 		@salidas = salidas
 	end
 
+	def en_salidas? opción
+		i = opción.to_i - 1
+		@sección_actual.salidas.length > i 
+	end
+
 end
 
 class Libro
@@ -119,10 +124,6 @@ class Libro
 				[:introducción]
 				)
 
-
-			
-
-
 		}
 		@sección_actual = @secciones[:inicio]
 	end
@@ -136,9 +137,6 @@ class Libro
 		@sección_actual
 	end
 
-	def en_salidas? opción
-		i = opción.to_i - 1
-		@sección_actual.salidas.length > i 
-	end
+	
 
 end
