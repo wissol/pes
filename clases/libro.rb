@@ -10,10 +10,6 @@ class Sección
 
 end
 
-
-
-# tests are like /test/attribute/difficulty/exit_if_ok/exit_if_doesn't_pass
-
 class Libro
 	attr_reader :secciones
 	
