@@ -6,6 +6,8 @@ require './clases/libro'
 require './clases/personaje'
 require './clases/master'
 
+# Iniciación
+
 pip = Personaje.new "Pip", 14, 
 		atributos = {fue:9, des:13, sal:13, per:16}, 
 		descripción = "Un chico interesante", género = :masc
@@ -16,10 +18,6 @@ túnica.cambia({:desc => "túnica"})
 pip.ponte túnica
 
 libro = Libro.new
-
-fragmentos = YAML.load_file "./yml/fragmentos.yml"
-
-máster = Máster.new
 
 class String
   def quita_acentos
@@ -42,6 +40,12 @@ end
 
 end
 
+fragmentos = YAML.load_file "./yml/fragmentos.yml"
+
+máster = Máster.new
+
+# ------------------ Funciones "Main" ----------------------------------------
+
 def responder entrada, libro
 
   # Parámetros
@@ -56,7 +60,7 @@ def responder entrada, libro
   nueva_sección = libro.sección_actual
   case frase.first
   when "1".."9"
-  	if sección_actual.en_salidas? frase.first
+  	if libro.sección_actual.en_salidas? frase.first
 	  	resultado = "Elegiste la opción #{frase.first}" 
 	    nueva_sección = libro.nueva_sección(frase.first.to_i )
 	else
@@ -78,10 +82,13 @@ def responder entrada, libro
   return resultado, nueva_sección
 end
 
-
-
-
-def display(sección, pj=pip, resultado = "")
+def muestra(sección, pj=pip, resultado = "")
+	# Parámentros (3)
+	# 	1. sección [Sección] definido en clases/libro.rb
+	#   2. pj      [Personaje] definido en clases/personaje.rb
+	#   3. resultado [String] contiene la respuesta del máster
+	# Llama a erb :index para mostrar la página web generada
+	
 	@title = "El emperador secreto | #{sección.título}"
 	@header = sección.cabecera
 	@content = sección.contenido
@@ -92,12 +99,12 @@ end
 
 
 get "/" do 	 
-	display libro.secciones[:inicio], pip, ""
+	muestra libro.secciones[:inicio], pip, ""
 end
 
 post "/" do 
 	resultado, nueva_sección = responder params["orden"], libro
-	display nueva_sección, pip, resultado
+	muestra nueva_sección, pip, resultado
 end
 
 

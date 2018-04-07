@@ -10,7 +10,7 @@ class Sección
 
 	def en_salidas? opción
 		i = opción.to_i - 1
-		@sección_actual.salidas.length > i 
+		@salidas.length > i 
 	end
 
 end
