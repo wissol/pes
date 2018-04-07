@@ -71,24 +71,26 @@ class Libro
 				),
 
 				personaje: Sección.new(
-				"Inicio",
+				"Personaje",
 				"El emperador secreto",
 				"
 				<h2>
-					Las reglas
+					Pip, tu personaje
 				</h2>
 
 				<p>
-					ñññññEsto es un libro-juego interactivo. Es un poco
-					narración, un poco juego de rol y un poco aventura
-					de texto.
+					Tienes catorce años. Te llamas Pip que, 
+					&mdash;entre otras cosas&mdas;, significa
+					<em>Puntito</em>. Es un nombre de esclavo. 
+					De tu familia no saben nada y, de momento,
+			    	prefieres no pensar mucho en ella.
+			    	Hasta aquí lo malo.
 				</p>
 				<p>
-			    	Funciona de	la siguiente manera. Lees una sección y
-			    	escribes qué quieres que haga tu personaje. El ordenador
-			    	que hace de máster, o de narrador o de director de juego,
-			    	o lo que prefieras, te responderá diciendo qué pasa a
-			    	continuación.
+			    	Sí, eres esclavo y todo eso, pero no un
+			    	esclavo cualquiera. Verás has crecido en 
+			    	palacio desde que te compraron a los tres
+			    	años. 
 				</p>
 
 				<h3>Algunas órdenes</h3>

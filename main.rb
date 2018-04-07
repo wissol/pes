@@ -43,6 +43,7 @@ end
 end
 
 def responder entrada, libro
+  # [EN] parser function 
   frase = entrada.strip.downcase.split.quita_preposiciones.quita_artículos
   frase.map! {|palabra| palabra.quita_acentos }
   nueva_sección = libro.sección_actual
