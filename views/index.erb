@@ -15,7 +15,11 @@
 			<main>
 			<h1><%= @cabecera %></h1> 
 
-			<%= @contenido %>			
+			<%= @contenido %>
+
+			<% if @fin %>
+			<h3>Fin</h3>
+			<% end %>			
 
 			<form method="POST" action="/">
 			  <p>¿Qué haces?: <input type="text" name="orden"></p>

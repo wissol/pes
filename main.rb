@@ -98,6 +98,7 @@ def muestra(sección, pj=pip, resultado = "")
 	@contenido = sección.contenido
 	@pj = pj
 	@resultado = resultado
+	sección.salidas.length == 0 ? @fin = true : @fin = false
 	erb :index
 end
 

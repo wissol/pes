@@ -122,7 +122,55 @@ class Libro
 				
 				",
 				[:introducción]
-				)
+				),
+				introducción: Sección.new(
+				"introducción",
+				"El emperador secreto",
+				"
+				<h2>
+					introducción
+				</h2>
+
+				<p>
+					Tienes catorce años. Te llamas Pip que, 
+					&mdash;entre otras cosas&mdash;, significa
+					<em>Puntito</em>. Es un nombre de esclavo. 
+					De tu familia no saben nada y, de momento,
+			    	prefieres no pensar mucho en ella.
+			    	Hasta aquí lo malo.
+				</p>
+
+				<h3> 
+					Tu biografía
+				</h3>
+				<p>
+			    	Sí, eres esclavo y todo eso, pero no un
+			    	esclavo cualquiera. Verás, has crecido en 
+			    	palacio desde que te compraron a los tres
+			    	años. Y tuviste la fortuna de que la cayeras
+			    	bien a Su Excelencia Dever de Joe, el
+			    	Segundo Ministro del Gabinete Imperial. Él
+			    	te ha protegido, instruído y enseñado lo básico
+			    	de la ciencia médica.
+				</p>
+
+				<p>
+					Tu trabajo se circunscribe a la enfermería de 
+					palacio. Lo que muchas veces significa que te
+					despierten en medio de la noche. ¡Y que no sea 
+					un príncipe borracho!
+				</p>
+				
+				<!--<h3>
+				Opciones
+				</h3>
+				<ol>
+				<li>Pasa a la aventura</li>
+				</ol>-->
+				
+				",
+				[]
+				),
 
 		}
 		@sección_actual = @secciones[:inicio]

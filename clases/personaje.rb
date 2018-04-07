@@ -1,6 +1,7 @@
 
 
 class Atributo
+	# Clase de los atributos de un personaje de rol como Fuerza, Destreza, etc
 	include Comparable
 	attr_reader :inicial, :actual
 	def initialize valor
@@ -13,10 +14,12 @@ class Atributo
 	end
 
 	def subir cantidad
+		# impide que valor actual sea mayor que valor inicial
 		@actual + cantidad > @inicial ? @actual = @inicial : @actual += cantidad
 	end
 
 	def bajar cantidad
+		# impide que valor actual sea menor que 0
 		@actual - cantidad < 1 ? @actual = 0 : @actual -= cantidad
 	end
 
@@ -110,6 +113,7 @@ class Manos
 end
 
 class Personaje
+	# Sería como la "hoja de personaje"
 	attr_reader :nombre, :edad, 
 				:fue, :des, :sal, :per, 
 				:equipo, :género
