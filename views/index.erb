@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+		<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title><%= @title %></title>
+
+		<link rel="stylesheet" href="normalize.css">
+		<link rel="stylesheet" href="main.css">
+	</head>
+
+	<body>
+		<div id="flexbox">
+			<main>
+			<h1><%= @header %></h1> 
+
+			<%= @content %>
+		
+			<% if @resultado != "" %>
+				<div class="resultado"><h3>Respuesta del Máster:</h3> <%= @resultado %></div>
+			<% end %>
+
+			<form method="POST" action="/">
+			  <p>¿Qué haces?: <input type="text" name="orden"></p>
+			  <!--<input type="submit" value="Responde">-->
+			</form>
+
+			</main>
+
+			<aside>
+				<%= @pj.to_html %>
+			</aside>
+		</div>
+		
+		<footer>
+			<p>Un librojuego de Miguel de Luis Espinosa</p>
+		</footer>
+	</body>
+</html>

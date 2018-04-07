@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif');
+
+body {
+	
+	
+	background-image: url("nami.png");
+	color: Ivory;
+	font-family: 'IBM Plex Serif',  Serif;
+	font-size: 1.3rem;
+	max-width: 1200px;
+	margin: 2em auto;
+	padding: 0 2em;
+}
+
+#flexbox {
+	display: flex;
+	justify-content: space-between;
+}
+
+main {	
+	background: DarkRed;
+	border: .5em dashed DarkOrange;
+	border-radius: 1em;
+	padding: .3em 3em;
+	flex-basis: 600px;
+}
+
+aside {
+	flex-basis: 400px;
+	font-size: .7em;
+}
+
+p { 
+	line-height: 1.3;	
+}
+
+
+
+h1, h2, h3, h4, strong, em {color: DarkOrange;}
+
+a {color: DarkOrange; }
+
+a:visited  {color: DarkOrange; }
+
+button {display:block; margin: 0 auto; padding: .3em; }
+
+.button {text-decoration: none;}
+
+table {margin-bottom: 1em;}
+
+td, th {
+	text-align: center;
+	padding-right:  1em;}
+
+.resultado {
+	text-align: center;
+	border: thick solid DarkOrange;
+	padding: 1em;
+}
