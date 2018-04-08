@@ -1,3 +1,22 @@
+class Prueba
+	attr_reader
+	def initialize tipo, dificultad=:normal, algo=nil
+		# tipo       [Symbol] :atributo (:fue, :des, :sal, :per)  :suerte 
+		# dificultad [Symbol] :fácil => +3 :normal 0 :difícil -3 (modifican el atributo)
+		# algo       [Symbol] :objeto => símbolo del objeto que tiene o no el jugador
+		@tipo = tipo
+		@dificultad = dificultad 
+		@algo = algo
+	end
+
+	def cuál?
+		if @algo
+			return nil, @algo
+		else
+			return @tipo, @dificultad
+		end
+	end
+end
 
 
 

@@ -102,6 +102,12 @@ def muestra(sección, pj=pip, resultado = "")
 	erb :index
 end
 
+def valora(sección, pj=pip, resultado = "")
+	# descubre si hay que hacer una prueba
+	# si hay que hacer prueba hace la prueba y llama a muestra
+	# si no hay que hacer prueba llama a muestra(sección, pj, resultado)
+end
+
 
 get "/" do 	 
 	muestra libro.secciones[:inicio], pip, ""
