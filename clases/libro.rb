@@ -164,6 +164,47 @@ class Libro
 				",
 				[:dever_herido]
 				),
+				dever_herido: Sección.new(
+				"Noticias, graves y terribles",
+				"El emperador secreto",
+				"
+				<h2>
+					Una llamada nocturna
+				</h2>
+				<p>
+					La campanilla.
+				</p>
+				<p>
+					&mdash;Pip, Pip, despierta, tienes que levantarte
+					muchacho. Algún príncipe tiene que estar echando 
+					la pota.
+				</p>
+
+				<p>
+					Es <em>Ker</em>, el capataz del turno de noche quien
+					te habla. Le sonríes, &mdash; no es culpa suya&mdash;
+					y, además, duermes siempre con la túnica puesta.
+				</p>
+
+				<p>
+					&mdash;Salgo corriendo, &mdash;podría ser una herida de espada. 
+					&mdash;Es vuestra broma; desde que empezó la guerra contra
+					los bárbaros, solo hay fiestas en palacio.
+				</p>
+
+				<h3>
+				Opciones
+				</h3>
+				<ol>
+				<li>
+					Aún así deberías recoger el <em>botiquín</em> y, si quieres,
+					tus sandalias. Después será mejor que salgas zumbando si no
+					quieres que te riñan. </li>
+				</ol>
+				
+				",
+				[]
+				),
 
 		}
 		@sección_actual = @secciones[:inicio]

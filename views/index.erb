@@ -12,8 +12,14 @@
 
 	<body>
 		<div id="flexbox">
+			<header>
+				<h1><%= @cabecera %></h1>
+				<% if @cabecera != "El emperado secreto" %>
+					<h3>El emperador secreto</h3>
+				<% end %>
+			</header>
 			<main>
-			<h1><%= @cabecera %></h1> 
+			 
 
 			<%= @contenido %>
 
