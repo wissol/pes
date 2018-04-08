@@ -1,4 +1,6 @@
 
+
+
 class Sección
 	attr_reader :título, :cabecera, :contenido, :salidas, :prueba
 	def initialize(título, cabecera, contenido, salidas=[], prueba=false)
