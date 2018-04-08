@@ -1,11 +1,12 @@
 
 class Sección
-	attr_reader :título, :cabecera, :contenido, :salidas
-	def initialize(título, cabecera, contenido, salidas=[])
+	attr_reader :título, :cabecera, :contenido, :salidas, :prueba
+	def initialize(título, cabecera, contenido, salidas=[], prueba=false)
 		@título = título
 		@cabecera = cabecera
 		@contenido = contenido
 		@salidas = salidas
+		@prueba = prueba
 	end
 
 	def en_salidas? opción
@@ -77,12 +78,8 @@ class Libro
 
 				personaje: Sección.new(
 				"Personaje",
-				"El emperador secreto",
+				"Pip, tu personaje",
 				"
-				<h2>
-					Pip, tu personaje
-				</h2>
-
 				<p>
 					Tienes catorce años. Te llamas Pip que, 
 					&mdash;entre otras cosas&mdas;, significa
@@ -125,11 +122,8 @@ class Libro
 				),
 				introducción: Sección.new(
 				"Introducción",
-				"El emperador secreto",
+				"Una llamada nocturna",
 				"
-				<h2>
-					Una llamada nocturna
-				</h2>
 				<p>
 					La campanilla.
 				</p>
@@ -166,44 +160,39 @@ class Libro
 				),
 				dever_herido: Sección.new(
 				"Noticias, graves y terribles",
-				"El emperador secreto",
+				"Noticias, graves y terribles",
 				"
-				<h2>
-					Una llamada nocturna
-				</h2>
 				<p>
-					La campanilla.
-				</p>
-				<p>
-					&mdash;Pip, Pip, despierta, tienes que levantarte
-					muchacho. Algún príncipe tiene que estar echando 
-					la pota.
+					No tardas mucho en llegar a la Sala del Trono. Esperarías
+					ver a los miembros adultos de familia imperial y doce aristócratas
+					ríendo sus borracheras, en medio de la música de los esclavos y
+					el humo del opio. Pero solo quedan los muebles sucios y alborotados
+					y el ajado trono manchado de sangre.
 				</p>
 
 				<p>
-					Es <em>Ker</em>, el capataz del turno de noche quien
-					te habla. Le sonríes, &mdash; no es culpa suya&mdash;
-					y, además, duermes siempre con la túnica puesta.
+					Un niño llora. Es <em>Wer</em>, el bufón, once años, esclavo como tú.
+					Corre a ti. &mdash;Se han peleado. Han matado a Su Excelencia Dever.
 				</p>
 
 				<p>
-					&mdash;Salgo corriendo, &mdash;podría ser una herida de espada. 
-					&mdash;Es vuestra broma; desde que empezó la guerra contra
-					los bárbaros, solo hay fiestas en palacio.
+					Corres, no hay nadie más. Dever de Joe, lo más parecido que has tenido
+					a un padre, yace entre cojines manchados de sangre. Le tomas el pulso.
+					<em>Wer</em> se equivoca, aún vive. Lo examinas. Acabamos pronto: es una 
+					terrible herida de espada.
 				</p>
 
 				<h3>
 				Opciones
 				</h3>
 				<ol>
-				<li>
-					Aún así deberías recoger el <em>botiquín</em> y, si quieres,
-					tus sandalias. Después será mejor que salgas zumbando si no
-					quieres que te riñan. </li>
+					<li>
+						¡Rápido!, intenta estabilizarlo.
+					</li>
 				</ol>
 				
 				",
-				[]
+				[:intenta]
 				),
 
 		}
