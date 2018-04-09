@@ -27,13 +27,16 @@
 			<%= @contenido %>
 
 			<% if @fin %>
-			<h3>Fin</h3>
-			<% end %>			
-
-			<form method="POST" action="/">
-			  <p>¿Qué haces?: <input type="text" name="orden"></p>
-			  <!--<input type="submit" value="Responde">-->
-			</form>
+				<h3>
+					Fin
+				</h3>
+							
+			<% else %>
+				<form method="POST" action="/">
+				  <p>¿Qué haces?: <input type="text" name="orden"></p>
+				  <!--<input type="submit" value="Responde">-->
+				</form>
+			<% end %>
 
 			</main>
 

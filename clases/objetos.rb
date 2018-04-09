@@ -28,6 +28,10 @@ class Objeto
 		"#{@desc} #{@carga} #{@daño} #{@ini} #{@prot}"
 	end
 
+	def to_sym
+		@tipo
+	end
+
 	def to_html
 	   "<tr>\n"\
 	   "  <td>#{@desc.capitalize}</td>\n  <td>#{@daño}</td>\n"\

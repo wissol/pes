@@ -15,9 +15,11 @@ pip = Personaje.new "Pip", 14,
 		descripción = "Un chico interesante", género = :masc
 
 túnica = Objeto.new({:tipo => :ropa})
+botiquín = Objeto.new({desc: "botiquín", carga:1, daño:0, prot:0, ini: 0, :tipo => :botiquín})
 túnica.cambia({:desc => "túnica"})
 
 pip.ponte túnica
+pip.recoge botiquín
 
 libro = Libro.new
 
@@ -117,7 +119,7 @@ def valora(sección, pj=pip, libro)
 	if sección.prueba.es_buscar_equipo?
 		# hacer la prueba 
 		# de momento suponemos que la pasamos
-		pasa_prueba = true 
+		pasa_prueba = pj.tiene? sección.prueba.cosa
 		return libro.nueva_sección(sección.prueba.salida(pasa_prueba))
 	else
 		# hacer la prueba
@@ -133,7 +135,6 @@ end
 post "/" do 
 	resultado, nueva_sección = responder params["orden"], libro
 	if nueva_sección.es_prueba?
-		puts "por aquí"
 		nueva_sección = valora(nueva_sección, pip, libro)
 		muestra nueva_sección, pip, resultado
 	else

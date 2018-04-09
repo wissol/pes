@@ -161,6 +161,11 @@ class Personaje
 		@calzado == :descalzo
 	end
 
+	def tiene? cosa_sym
+		equipo_sym = @equipo.map {|objeto| objeto.to_sym}
+		equipo_sym.include? cosa_sym
+	end
+
 
 	def ponte prenda
 		if prenda.vestible?
