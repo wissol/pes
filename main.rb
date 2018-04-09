@@ -112,8 +112,15 @@ def valora(sección, pj=pip, resultado = "")
 	# descubre si hay que hacer una prueba
 	# si hay que hacer prueba hace la prueba y llama a muestra
 	# si no hay que hacer prueba llama a muestra(sección, pj, resultado)
-	puts sección.prueba
+	
 	if sección.prueba
+		if sección.prueba.es_buscar_equipo?
+			# hacer la prueba de momento suponemos que la pasamos
+			pasa_prueba = true 
+			# ¡terminar!
+		else
+			# hacer la prueba
+		end
 		muestra sección, pj, resultado
 	else
 		muestra sección, pj, resultado
@@ -127,7 +134,7 @@ end
 
 post "/" do 
 	resultado, nueva_sección = responder params["orden"], libro
-	valora nueva_sección, pip, resultado
+	nueva_seccion = valora nueva_sección, pip, resultado
 end
 
 

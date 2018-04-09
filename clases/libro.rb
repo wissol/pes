@@ -14,13 +14,30 @@ class Prueba
 		@salida_alternativa = salida_alternativa
 	end
 
-	def cuál?
-		if @algo
-			return nil, @algo
+	def tipo
+		@tipo
+	end
+
+	def es_buscar_equipo?
+		# true si la prueba es de buscar equipo
+		@tipo == :objeto
+	end
+
+	def cosa
+		@algo
+	end
+
+	def dificultad
+		case @dificultad
+		when :fácil
+			3
+		when :difícil
+			-3
 		else
-			return @tipo, @dificultad
+			0
 		end
 	end
+	
 
 	def salida pasó_prueba
 		pasó_prueba ? salida_esperada : salida_alternativa
@@ -222,7 +239,15 @@ class Libro
 				</ol>
 				
 				",
-				[:intenta]
+				[:prueba_botiquín],
+				),
+
+				prueba_botiquín: Sección.new(
+				"",
+				"",
+				"",
+				[],
+				Prueba.new(:objeto, :normal, :botiquín, :dever_vive, :dever_muere)
 				),
 
 		}
