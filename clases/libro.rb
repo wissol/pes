@@ -1,12 +1,17 @@
 class Prueba
 	attr_reader
-	def initialize tipo, dificultad=:normal, algo=nil
+	def initialize tipo, dificultad=:normal, algo=nil, salida_esperada, salida_alternativa
 		# tipo       [Symbol] :atributo (:fue, :des, :sal, :per)  :suerte 
 		# dificultad [Symbol] :fácil => +3 :normal 0 :difícil -3 (modifican el atributo)
 		# algo       [Symbol] :objeto => símbolo del objeto que tiene o no el jugador
+		# salida_esperada [Symbol] :sección a la que se dirigen si se pasa la prueba
+		# salida_alternativa [Symbol] :sección si no se pasa la prueba
+
 		@tipo = tipo
 		@dificultad = dificultad 
 		@algo = algo
+		@salida_esperada = salida_esperada
+		@salida_alternativa = salida_alternativa
 	end
 
 	def cuál?
@@ -15,6 +20,10 @@ class Prueba
 		else
 			return @tipo, @dificultad
 		end
+	end
+
+	def salida pasó_prueba
+		pasó_prueba ? salida_esperada : salida_alternativa
 	end
 end
 
