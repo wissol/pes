@@ -108,23 +108,21 @@ def muestra(sección, pj=pip, resultado = "")
 	erb :index
 end
 
-def valora(sección, pj=pip, resultado = "")
-	# descubre si hay que hacer una prueba
-	# si hay que hacer prueba hace la prueba y llama a muestra
+def valora(sección, pj=pip, libro)
+	# hace la prueba y llama a muestra
 	# si no hay que hacer prueba llama a muestra(sección, pj, resultado)
-	
-	if sección.prueba
-		if sección.prueba.es_buscar_equipo?
-			# hacer la prueba de momento suponemos que la pasamos
-			pasa_prueba = true 
-			# ¡terminar!
-		else
-			# hacer la prueba
-		end
-		muestra sección, pj, resultado
+
+	# Devuelve [Symbol] que remite a 
+		
+	if sección.prueba.es_buscar_equipo?
+		# hacer la prueba 
+		# de momento suponemos que la pasamos
+		pasa_prueba = true 
+		return libro.nueva_sección(sección.prueba.salida(pasa_prueba))
 	else
-		muestra sección, pj, resultado
+		# hacer la prueba
 	end
+
 end
 
 
@@ -134,7 +132,13 @@ end
 
 post "/" do 
 	resultado, nueva_sección = responder params["orden"], libro
-	nueva_seccion = valora nueva_sección, pip, resultado
+	if nueva_sección.es_prueba?
+		puts "por aquí"
+		nueva_sección = valora(nueva_sección, pip, libro)
+		muestra nueva_sección, pip, resultado
+	else
+		muestra nueva_sección, pip, resultado
+	end
 end
 
 

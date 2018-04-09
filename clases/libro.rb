@@ -1,17 +1,13 @@
 class Prueba
 	attr_reader
-	def initialize tipo, dificultad=:normal, algo=nil, salida_esperada, salida_alternativa
+	def initialize tipo, dificultad=:normal, algo=nil
 		# tipo       [Symbol] :atributo (:fue, :des, :sal, :per)  :suerte 
 		# dificultad [Symbol] :fácil => +3 :normal 0 :difícil -3 (modifican el atributo)
 		# algo       [Symbol] :objeto => símbolo del objeto que tiene o no el jugador
-		# salida_esperada [Symbol] :sección a la que se dirigen si se pasa la prueba
-		# salida_alternativa [Symbol] :sección si no se pasa la prueba
 
 		@tipo = tipo
 		@dificultad = dificultad 
 		@algo = algo
-		@salida_esperada = salida_esperada
-		@salida_alternativa = salida_alternativa
 	end
 
 	def tipo
@@ -40,7 +36,7 @@ class Prueba
 	
 
 	def salida pasó_prueba
-		pasó_prueba ? salida_esperada : salida_alternativa
+		pasó_prueba ? 1 : 2
 	end
 end
 
@@ -59,6 +55,10 @@ class Sección
 	def en_salidas? opción
 		i = opción.to_i - 1
 		@salidas.length > i 
+	end
+
+	def es_prueba?
+		true unless @prueba == false			
 	end
 
 end
@@ -120,10 +120,11 @@ class Libro
 				</ol>
 
 				",
-				[:personaje, :introducción]
-				),
+				[:personaje, :introducción],
+				false
+			),
 
-				personaje: Sección.new(
+			personaje: Sección.new(
 				"Personaje",
 				"Pip, tu personaje",
 				"
@@ -165,9 +166,11 @@ class Libro
 				</ol>
 				
 				",
-				[:introducción]
-				),
-				introducción: Sección.new(
+				[:introducción],
+				false
+			),
+			
+			introducción: Sección.new(
 				"Introducción",
 				"Una llamada nocturna",
 				"
@@ -203,9 +206,11 @@ class Libro
 				</ol>
 				
 				",
-				[:dever_herido]
-				),
-				dever_herido: Sección.new(
+				[:dever_herido],
+				false
+			),
+
+			dever_herido: Sección.new(
 				"Noticias, graves y terribles",
 				"Noticias, graves y terribles",
 				"
@@ -240,15 +245,24 @@ class Libro
 				
 				",
 				[:prueba_botiquín],
-				),
+				false
+			),
 
-				prueba_botiquín: Sección.new(
+			prueba_botiquín: Sección.new(
 				"",
 				"",
 				"",
+				[:dever_vive, :dever_muere],
+				Prueba.new(:objeto, :normal, :botiquín)
+			),
+
+			dever_vive: Sección.new(
+				"¡Dever vive!",
+				"¡Dever vive!",
+				"<p>Lo conseguiste</p>",
 				[],
-				Prueba.new(:objeto, :normal, :botiquín, :dever_vive, :dever_muere)
-				),
+				false
+			),
 
 		}
 		@sección_actual = @secciones[:inicio]
