@@ -1,3 +1,5 @@
+#!/usr/local/bin/ruby -w
+
 require 'yaml'
 require 'sinatra'
 require 'erb'
@@ -20,19 +22,22 @@ pip.ponte túnica
 libro = Libro.new
 
 class String
+
   def quita_acentos
     acentos = {"á"=>"a", "é"=>"e", "í"=>"i", "ó"=>"o", "ú"=>"u",
                "Á"=>"A", "É"=>"E", "Í"=>"I", "Ó"=>"O", "Ú"=>"U"}
-    self.gsub /[áéíóú]/, acentos
+    self.gsub(/[áéíóú]/, acentos)
   end 
     
 end
 
 class Array
+	
 def quita_preposiciones
   preposiciones = "A ante bajo cabe con contra de desde en entre hacia hasta para por según sin sobre tras durante mediante".split
   self.delete_if {|palabra| preposiciones.include? palabra }
 end
+
 def quita_artículos
   artículos = "el la las lo un una unos unos".split
   self.delete_if {|palabra| artículos.include? palabra }
@@ -59,6 +64,7 @@ def responder entrada, libro
   # Devuelve:
   # 	1. resultado [String] contiene la respuesta del máster
   # 	2. nueva_sección [Sección] definido en clases/libro.rb
+
   frase = entrada.strip.downcase.split.quita_preposiciones.quita_artículos
   frase.map! {|palabra| palabra.quita_acentos }
   nueva_sección = libro.sección_actual
@@ -106,6 +112,12 @@ def valora(sección, pj=pip, resultado = "")
 	# descubre si hay que hacer una prueba
 	# si hay que hacer prueba hace la prueba y llama a muestra
 	# si no hay que hacer prueba llama a muestra(sección, pj, resultado)
+	puts sección.prueba
+	if sección.prueba
+		muestra sección, pj, resultado
+	else
+		muestra sección, pj, resultado
+	end
 end
 
 
@@ -115,7 +127,7 @@ end
 
 post "/" do 
 	resultado, nueva_sección = responder params["orden"], libro
-	muestra nueva_sección, pip, resultado
+	valora nueva_sección, pip, resultado
 end
 
 
