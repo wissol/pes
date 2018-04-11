@@ -117,8 +117,6 @@ def valora(sección, pj=pip, libro)
 	# Devuelve [Symbol] que remite a 
 		
 	if sección.prueba.es_buscar_equipo?
-		# hacer la prueba 
-		# de momento suponemos que la pasamos
 		pasa_prueba = pj.tiene? sección.prueba.cosa
 		return libro.nueva_sección(sección.prueba.salida(pasa_prueba))
 	else

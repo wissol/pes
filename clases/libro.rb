@@ -192,7 +192,8 @@ class Libro
 				<p>
 					&mdash;Salgo corriendo, &mdash;podría ser una herida de espada. 
 					&mdash;Es vuestra broma; desde que empezó la guerra contra
-					los bárbaros, solo hay fiestas en palacio.
+					los bárbaros, solo hay fiestas en palacio. Aún así deberías recoger 
+					el <em>botiquín</em> y, si quieres, ponerte tus sandalias.
 				</p>
 
 				<h3>
@@ -200,8 +201,7 @@ class Libro
 				</h3>
 				<ol>
 				<li>
-					Aún así deberías recoger el <em>botiquín</em> y, si quieres,
-					tus sandalias. Después será mejor que salgas zumbando si no
+					 Después será mejor que salgas zumbando si no
 					quieres que te riñan. </li>
 				</ol>
 				
@@ -257,9 +257,35 @@ class Libro
 			),
 
 			dever_vive: Sección.new(
+				"Dever vive",
 				"¡Dever vive!",
-				"¡Dever vive!",
-				"<p>Lo conseguiste</p>",
+				"<p>
+					Tras mucho esfuerzo consigues contener la herida de Dever.
+					Pero sabes que va a morir; solo has retrasado el tema y bla bla
+				</p>
+
+				<h3>
+				Opciones
+				</h3>
+				<ol>
+					<li>
+						Huir del monstruo
+					</li>
+					<li>
+						Luchar contra el monsturo
+					</li>
+				</ol>
+				",
+				[:huída, :lucha ],
+				false
+			),
+
+			dever_muere: Sección.new(
+				"La muerte de Dever",
+				"La muerte de Dever"
+				"Dever ha muerto se pierde la esperanza y bla bla
+
+				",
 				[],
 				false
 			),
